@@ -1,9 +1,5 @@
-﻿using ScaryTalesNewEngine.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ScaryTalesNewEngine.Abstractions;
+using ScaryTalesNewEngine.Enums;
 
 namespace ScaryTalesNewEngine.Defenitions
 {
@@ -18,10 +14,32 @@ namespace ScaryTalesNewEngine.Defenitions
         public int CardCountInDeck { get; }
 
         public ICardEffect Effect { get; }
+
+        public CardDefinition(
+            CardId id,
+            string name,
+            CardType type,
+            int points,
+            string effectDescription,
+            CardPosition defaultPosition,
+            int cardCountInDeck,
+            ICardEffect effect)
+        {
+            Id = id;
+            Name = name;
+            Type = type;
+            Points = points;
+            EffectDescription = effectDescription;
+            DefaultPosition = defaultPosition;
+            CardCountInDeck = cardCountInDeck;
+            Effect = effect;
+        }
+
         public override string ToString()
         {
-            return $"{this.Id} | {this.Name}";
+            return $"{Id} | {Name}";
         }
     }
+
     public readonly record struct CardId(int Value);
 }
