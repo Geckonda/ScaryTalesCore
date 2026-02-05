@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Actions\GameFlow\" />
+    <Folder Include="Actions\Cards\" />
+    <Folder Include="Actions\Players\" />
+    <Folder Include="Actions\Board\" />
+    <Folder Include="Actions\Rules\" />
+    <Folder Include="Actions\System\" />
+  </ItemGroup>
+
+</Project>
