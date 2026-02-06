@@ -1,11 +1,11 @@
-using ScaryTalesNewEngine.Abstractions;
+﻿using ScaryTalesNewEngine.Abstractions;
 using ScaryTalesNewEngine.Enums;
 
 namespace ScaryTalesNewEngine.Defenitions
 {
     public class CardDefinition
     {
-        public CardId Id { get; }
+        public CardDefinitionId Id { get; }
         public string Name { get; }
         public CardType Type { get; }
         public int Points { get; }
@@ -16,7 +16,7 @@ namespace ScaryTalesNewEngine.Defenitions
         public ICardEffect Effect { get; }
 
         public CardDefinition(
-            CardId id,
+            CardDefinitionId id,
             string name,
             CardType type,
             int points,
@@ -40,6 +40,6 @@ namespace ScaryTalesNewEngine.Defenitions
             return $"{Id} | {Name}";
         }
     }
-
-    public readonly record struct CardId(int Value);
+    public readonly record struct CardDefinitionId(int Value);
+    public readonly record struct CardInstanceId(int Value);
 }

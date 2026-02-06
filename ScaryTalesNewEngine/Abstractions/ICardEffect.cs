@@ -1,9 +1,10 @@
-using ScaryTalesNewEngine.Defenitions;
+﻿using ScaryTalesNewEngine.Defenitions;
+using ScaryTalesNewEngine.Effects;
 
 namespace ScaryTalesNewEngine.Abstractions
 {
     public interface ICardEffect
     {
-        IEnumerable<IGameAction> CreateActions(GameContext context, PlayerId targetPlayerId);
+        public IEnumerable<IGameAction> BuildActions(EffectContext context);
     }
 }

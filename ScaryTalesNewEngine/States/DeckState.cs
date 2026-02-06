@@ -9,7 +9,7 @@ namespace ScaryTalesNewEngine.States
 {
     public sealed class DeckState
     {
-        public IReadOnlyList<CardId> Cards { get; init; }
+        public IReadOnlyList<CardInstanceId> Cards { get; init; }
 
         public int Count => Cards.Count;
     }

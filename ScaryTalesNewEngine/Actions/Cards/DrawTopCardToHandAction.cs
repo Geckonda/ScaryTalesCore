@@ -1,4 +1,4 @@
-using ScaryTalesNewEngine.Abstractions;
+﻿using ScaryTalesNewEngine.Abstractions;
 using ScaryTalesNewEngine.Defenitions;
 using ScaryTalesNewEngine.Enums;
 using ScaryTalesNewEngine.States;
@@ -51,7 +51,7 @@ namespace ScaryTalesNewEngine.Actions.Cards
                 [_playerId] = newPlayerState
             };
 
-            var updatedCardStates = new Dictionary<CardId, CardState>(context.CardStates);
+            var updatedCardStates = new Dictionary<CardInstanceId, CardState>(context.CardStates);
             if (updatedCardStates.TryGetValue(drawnCardId, out var existingCardState))
             {
                 updatedCardStates[drawnCardId] = existingCardState with
@@ -64,7 +64,8 @@ namespace ScaryTalesNewEngine.Actions.Cards
             {
                 updatedCardStates[drawnCardId] = new CardState
                 {
-                    CardId = drawnCardId,
+                    InstanceId = drawnCardId,
+                    // А как получить DefenitionId? 
                     Position = CardPosition.InHand,
                     OwnerId = _playerId
                 };

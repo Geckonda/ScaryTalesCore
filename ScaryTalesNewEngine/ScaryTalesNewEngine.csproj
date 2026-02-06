@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Actions\GameFlow\" />
-    <Folder Include="Actions\Cards\" />
     <Folder Include="Actions\Players\" />
     <Folder Include="Actions\Board\" />
     <Folder Include="Actions\Rules\" />

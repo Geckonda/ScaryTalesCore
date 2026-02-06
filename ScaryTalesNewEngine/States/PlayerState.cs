@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace ScaryTalesNewEngine.States
 {
-    public sealed class PlayerState
+    public sealed record PlayerState
     {
         public PlayerId Id { get; init; }
         public int Score { get; init; }
 
-        public IReadOnlyList<CardId> Hand { get; init; }
+        public IReadOnlyList<CardInstanceId> Hand { get; init; }
         public IReadOnlyList<ItemId> Items { get; init; }
     }
 

@@ -1,4 +1,4 @@
-using ScaryTalesNewEngine.Abstractions;
+﻿using ScaryTalesNewEngine.Abstractions;
 using ScaryTalesNewEngine.Actions.Cards;
 using ScaryTalesNewEngine.Defenitions;
 
@@ -10,13 +10,10 @@ namespace ScaryTalesNewEngine.Effects
     /// </summary>
     public sealed class MerchantCardEffect : ICardEffect
     {
-        public IEnumerable<IGameAction> CreateActions(GameContext context, PlayerId targetPlayerId)
+        public IEnumerable<IGameAction> BuildActions(EffectContext context)
         {
-            return new IGameAction[]
-            {
-                new DrawTopCardToHandAction(targetPlayerId),
-                new DrawTopCardToHandAction(targetPlayerId)
-            };
+            yield return new DrawTopCardToHandAction(context.SourcePlayer);
+            yield return new DrawTopCardToHandAction(context.SourcePlayer);
         }
     }
 }

@@ -10,7 +10,8 @@ namespace ScaryTalesNewEngine.States
 {
     public sealed record CardState
     {
-        public CardId CardId { get; init; }
+        public CardInstanceId InstanceId { get; init; }
+        public CardDefinitionId DefinitionId { get; init; }
         public CardPosition Position { get; init; }
         public PlayerId? OwnerId { get; init; }
     }
